@@ -104,7 +104,7 @@ export default function Profile() {
           style={styles.input}
           onChangeText={setName}
           value={name}
-          placeholder="Type your mail"
+          placeholder="Type your name"
           autoCapitalize="none"
         />
 
@@ -113,7 +113,7 @@ export default function Profile() {
           style={styles.input}
           onChangeText={setTitle}
           value={title}
-          placeholder="Type your mail"
+          placeholder="Type your title"
           autoCapitalize="none"
         />
         <Text style={styles.label}>Mail</Text>

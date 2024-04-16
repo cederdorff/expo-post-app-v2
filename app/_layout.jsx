@@ -5,13 +5,15 @@ import {
   ThemeProvider
 } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
+import { Stack, useRouter } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 
 import { useColorScheme } from "@/components/useColorScheme";
 import { ActionSheetProvider } from "@expo/react-native-action-sheet";
 import { StatusBar } from "expo-status-bar";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "@/firebase-config";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -52,6 +54,17 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
+  const router = useRouter();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, user => {
+      console.log("user: ", user);
+      if (!user) {
+        // No user is signed in.
+        router.replace("/sign-in");
+      }
+    });
+  });
 
   return (
     <ActionSheetProvider>

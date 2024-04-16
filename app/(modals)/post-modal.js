@@ -13,7 +13,7 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
-// import { auth } from "../../firebase-config";
+import { auth } from "../../firebase-config";
 
 export default function PostModal() {
   const { id } = useLocalSearchParams();

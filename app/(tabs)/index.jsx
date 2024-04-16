@@ -8,6 +8,7 @@ import {
   View
 } from "react-native";
 import Post from "../components/Post";
+import { tintColorDark } from "@/constants/Colors";
 
 export default function Posts() {
   const [posts, setPosts] = useState([]);
@@ -63,7 +64,7 @@ export default function Posts() {
           <RefreshControl
             refreshing={refreshing}
             onRefresh={handleRefresh}
-            tintColor="#264c59"
+            tintColor={tintColorDark}
           />
         }
       />

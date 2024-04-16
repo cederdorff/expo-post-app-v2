@@ -2,6 +2,7 @@ import { Stack, useRouter } from "expo-router";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { primary, secondary, tintColorLight } from "../constants/Colors";
 
 export default function SignIn() {
   const [mail, setMail] = useState("");
@@ -34,9 +35,9 @@ export default function SignIn() {
       <Stack.Screen
         options={{
           title: "Sign In",
-          headerTintColor: "#fff",
+          headerTintColor: tintColorLight,
           headerStyle: {
-            backgroundColor: "#264c59"
+            backgroundColor: primary
           }
         }}
       />
@@ -56,8 +57,8 @@ export default function SignIn() {
         secureTextEntry={true}
         placeholder="Type your password"
       />
-      <Button title="Sign In" color="#264c59" onPress={handleSignIn} />
-      <Button title="Create new account" color="#264c59" onPress={goToSignUp} />
+      <Button title="Sign In" color={primary} onPress={handleSignIn} />
+      <Button title="Create new account" color={primary} onPress={goToSignUp} />
       <Text style={styles.errorMessage}>{message}</Text>
     </View>
   );
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 24,
-    backgroundColor: "#acc6c9"
+    backgroundColor: secondary
   },
   main: {
     flex: 1
@@ -77,14 +78,14 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 25,
-    color: "#264c59",
+    color: primary,
     marginTop: 30,
     marginBottom: 5
   },
   input: {
     height: 50,
     padding: 10,
-    backgroundColor: "#ffffff",
+    backgroundColor: tintColorLight,
     borderRadius: 20,
     marginVertical: 20
   },

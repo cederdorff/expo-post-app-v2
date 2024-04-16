@@ -2,6 +2,7 @@ import { Stack, useRouter } from "expo-router";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { useState } from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { primary, secondary, tintColorLight } from "../constants/Colors";
 
 export default function SignUp() {
   const [mail, setMail] = useState("");
@@ -29,9 +30,9 @@ export default function SignUp() {
       <Stack.Screen
         options={{
           title: "Create new account",
-          headerTintColor: "#fff",
+          headerTintColor: tintColorLight,
           headerStyle: {
-            backgroundColor: "#264c59"
+            backgroundColor: primary
           }
         }}
       />
@@ -51,7 +52,7 @@ export default function SignUp() {
         secureTextEntry={true}
         placeholder="Type your password"
       />
-      <Button title="Create account" color="#264c59" onPress={handleSignUp} />
+      <Button title="Create account" color={primary} onPress={handleSignUp} />
       <Text style={styles.errorMessage}>{message}</Text>
     </View>
   );
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 24,
-    backgroundColor: "#acc6c9"
+    backgroundColor: secondary
   },
   main: {
     flex: 1
@@ -71,14 +72,14 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 25,
-    color: "#264c59",
+    color: primary,
     marginTop: 30,
     marginBottom: 5
   },
   input: {
     height: 50,
     padding: 10,
-    backgroundColor: "#ffffff",
+    backgroundColor: tintColorLight,
     borderRadius: 20,
     marginVertical: 20
   },

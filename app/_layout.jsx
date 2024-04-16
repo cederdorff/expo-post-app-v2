@@ -14,6 +14,7 @@ import { ActionSheetProvider } from "@expo/react-native-action-sheet";
 import { StatusBar } from "expo-status-bar";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/firebase-config";
+import { primary, tintColorLight } from "@/constants/Colors";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -78,10 +79,10 @@ function RootLayoutNav() {
             options={{
               presentation: "modal",
               headerStyle: {
-                backgroundColor: "#264c59",
-                headerTintColor: "#fff"
+                backgroundColor: { primary },
+                headerTintColor: { tintColorLight }
               },
-              headerTintColor: "#fff",
+              headerTintColor: { tintColorLight },
               headerTitleStyle: {
                 fontWeight: "bold"
               }

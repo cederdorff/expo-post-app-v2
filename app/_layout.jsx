@@ -11,6 +11,7 @@ import { useEffect } from "react";
 
 import { useColorScheme } from "@/components/useColorScheme";
 import { ActionSheetProvider } from "@expo/react-native-action-sheet";
+import { StatusBar } from "expo-status-bar";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -55,9 +56,24 @@ function RootLayoutNav() {
   return (
     <ActionSheetProvider>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+        <StatusBar style="light" />
+
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="modal" options={{ presentation: "modal" }} />
+          <Stack.Screen
+            name="(modals)/post-modal"
+            options={{
+              presentation: "modal",
+              headerStyle: {
+                backgroundColor: "#264c59",
+                headerTintColor: "#fff"
+              },
+              headerTintColor: "#fff",
+              headerTitleStyle: {
+                fontWeight: "bold"
+              }
+            }}
+          />
         </Stack>
       </ThemeProvider>
     </ActionSheetProvider>

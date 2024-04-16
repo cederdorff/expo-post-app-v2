@@ -14,7 +14,7 @@ export default function Posts() {
   const [refreshing, setRefreshing] = useState(false);
   const router = useRouter();
 
-  const API_URL = "https://expo-post-app-default-rtdb.firebaseio.com";
+  const { EXPO_PUBLIC_API_URL } = process.env;
 
   useEffect(() => {
     getPosts();
@@ -30,7 +30,7 @@ export default function Posts() {
   );
 
   async function getPosts() {
-    const response = await fetch(`${API_URL}/posts.json`);
+    const response = await fetch(`${EXPO_PUBLIC_API_URL}/posts.json`);
     const dataObj = await response.json();
     const postsArray = Object.keys(dataObj).map(key => ({
       id: key,
@@ -55,18 +55,6 @@ export default function Posts() {
 
   return (
     <View style={styles.list}>
-      <Stack.Screen
-        options={{
-          headerRight: () => (
-            <Button
-              title="Add New"
-              color="#fff"
-              onPress={() => router.push("/post-modal")}
-            />
-          )
-        }}
-      />
-
       <FlatList
         data={posts}
         renderItem={renderPost}

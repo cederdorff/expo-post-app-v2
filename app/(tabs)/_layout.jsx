@@ -1,7 +1,7 @@
 import React from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Link, Tabs } from "expo-router";
-import { Pressable } from "react-native";
+import { Button, Pressable, Text } from "react-native";
 
 import Colors from "@/constants/Colors";
 import { useColorScheme } from "@/components/useColorScheme";
@@ -18,10 +18,22 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+        tabBarActiveTintColor: "#264c59",
+        tabBarInactiveTintColor: "#fff",
+        tabBarActiveBackgroundColor: "#acc6c9",
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true)
+        headerShown: useClientOnlyValue(false, true),
+        headerStyle: {
+          backgroundColor: "#264c59"
+        },
+        headerTintColor: "#fff",
+        headerTitleStyle: {
+          fontWeight: "bold"
+        },
+        tabBarStyle: {
+          backgroundColor: "#264c59"
+        }
       }}>
       <Tabs.Screen
         name="index"
@@ -29,17 +41,8 @@ export default function TabLayout() {
           title: "Posts",
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
           headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
-                    color={Colors[colorScheme ?? "light"].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
+            <Link href="/(modals)/post-modal" asChild>
+              <Button title="Add New" color="#fff" />
             </Link>
           )
         }}

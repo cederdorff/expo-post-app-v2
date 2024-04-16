@@ -51,6 +51,7 @@ export default function TabLayout() {
         name="map"
         options={{
           title: "Map",
+          headerShown: false,
           tabBarIcon: ({ color }) => <TabBarIcon name="map" color={color} />
         }}
       />
@@ -58,6 +59,7 @@ export default function TabLayout() {
         name="users"
         options={{
           title: "User",
+          headerShown: false,
           tabBarIcon: ({ color }) => <TabBarIcon name="users" color={color} />
         }}
       />

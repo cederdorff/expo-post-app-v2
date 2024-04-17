@@ -28,7 +28,7 @@ export default function PostModal() {
   const [image, setImage] = useState("");
   const [location, setLocation] = useState({});
   const router = useRouter();
-  const { EXPO_PUBLIC_API_URL } = process.env;
+  const { EXPO_PUBLIC_API_URL, EXPO_PUBLIC_OPEN_CAGE_API_KEY } = process.env;
 
   useEffect(() => {
     async function getPost() {
@@ -83,9 +83,8 @@ export default function PostModal() {
 
   async function getLocation() {
     const currentLocation = await Location.getCurrentPositionAsync();
-    const API_KEY = "d56227e5719542ec8aabe5c0bd2d502d";
     const response = await fetch(
-      `https://api.opencagedata.com/geocode/v1/json?q=${currentLocation.coords.latitude}+${currentLocation.coords.longitude}&key=${API_KEY}`
+      `https://api.opencagedata.com/geocode/v1/json?q=${currentLocation.coords.latitude}+${currentLocation.coords.longitude}&key=${EXPO_PUBLIC_OPEN_CAGE_API_KEY}`
     );
     const data = await response.json();
     console.log(data);

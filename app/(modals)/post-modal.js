@@ -171,6 +171,7 @@ export default function PostModal() {
           style={styles.input}
           onChangeText={setCaption}
           value={caption}
+          placeholder="Type your caption"
         />
         <Text style={styles.label}>City</Text>
         <TextInput

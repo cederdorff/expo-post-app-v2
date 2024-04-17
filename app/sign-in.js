@@ -63,9 +63,9 @@ export default function SignIn() {
         secureTextEntry={true}
         placeholder="Type your password"
       />
+      <Text style={styles.errorMessage}>{message}</Text>
       <Button title="Sign In" color={primary} onPress={handleSignIn} />
       <Button title="Create new account" color={primary} onPress={goToSignUp} />
-      <Text style={styles.errorMessage}>{message}</Text>
     </View>
   );
 }
@@ -93,7 +93,10 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: tintColorLight,
     borderRadius: borderRadius,
-    marginVertical: 20
+    marginVertical: 20,
+    borderRadius: borderRadius,
+    borderColor: primary,
+    borderWidth: 2
   },
   errorMessage: {
     color: "red",

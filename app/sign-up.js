@@ -58,8 +58,8 @@ export default function SignUp() {
         secureTextEntry={true}
         placeholder="Type your password"
       />
-      <Button title="Create account" color={primary} onPress={handleSignUp} />
       <Text style={styles.errorMessage}>{message}</Text>
+      <Button title="Create account" color={primary} onPress={handleSignUp} />
     </View>
   );
 }
@@ -87,7 +87,10 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: tintColorLight,
     borderRadius: borderRadius,
-    marginVertical: 20
+    marginVertical: 20,
+    borderRadius: borderRadius,
+    borderColor: primary,
+    borderWidth: 2
   },
   errorMessage: {
     color: "red",

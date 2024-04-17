@@ -14,7 +14,7 @@ import { ActionSheetProvider } from "@expo/react-native-action-sheet";
 import { StatusBar } from "expo-status-bar";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/firebase-config";
-import { primary, tintColorLight } from "@/constants/Colors";
+import { primary, tintColorLight } from "@/constants/ThemeVariables";
 
 export {
   // Catch any errors thrown by the Layout component.

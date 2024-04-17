@@ -17,6 +17,7 @@
     "app/(tabs)/map.jsx",
     "app/modal.jsx",
     "app/+not-found.jsx",
-    "app/+html.jsx"
+    "app/+html.jsx",
+    "constants/ThemeVariables.jsx"
   ]
 }

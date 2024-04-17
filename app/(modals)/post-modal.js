@@ -19,7 +19,7 @@ import {
   primary,
   secondary,
   tintColorLight
-} from "../../constants/Colors";
+} from "../../constants/ThemeVariables";
 import { auth } from "../../firebase-config";
 
 export default function PostModal() {

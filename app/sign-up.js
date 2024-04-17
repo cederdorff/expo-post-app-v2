@@ -8,7 +8,7 @@ import {
   primary,
   secondary,
   tintColorLight
-} from "../constants/Colors";
+} from "../constants/ThemeVariables";
 
 export default function SignUp() {
   const [mail, setMail] = useState("");

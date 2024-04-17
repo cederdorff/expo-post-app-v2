@@ -10,7 +10,7 @@ import {
   View
 } from "react-native";
 import Avatar from "./Avatar";
-import { primary, secondary } from "@/constants/Colors";
+import { primary, secondary } from "@/constants/ThemeVariables";
 
 export default function Post({ post, reload }) {
   const { showActionSheetWithOptions } = useActionSheet();

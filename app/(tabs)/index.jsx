@@ -8,7 +8,7 @@ import {
   View
 } from "react-native";
 import Post from "../components/Post";
-import { tintColorDark } from "@/constants/Colors";
+import { tintColorDark } from "@/constants/ThemeVariables";
 
 export default function Posts() {
   const [posts, setPosts] = useState([]);

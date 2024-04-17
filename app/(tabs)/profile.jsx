@@ -20,7 +20,7 @@ import {
   primary,
   secondary,
   tintColorLight
-} from "../../constants/Colors";
+} from "../../constants/ThemeVariables";
 
 export default function Profile() {
   const [name, setName] = useState("");

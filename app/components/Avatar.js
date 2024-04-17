@@ -1,4 +1,4 @@
-import { primary } from "@/constants/Colors";
+import { primary } from "@/constants/ThemeVariables";
 import { useEffect, useState } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 

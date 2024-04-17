@@ -2,7 +2,11 @@ import { Stack, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import { Image, StyleSheet, Text, View, ScrollView } from "react-native";
 import Post from "../../components/Post";
-import { primary, secondary, tintColorLight } from "../../../constants/Colors";
+import {
+  primary,
+  secondary,
+  tintColorLight
+} from "../../../constants/ThemeVariables";
 
 export default function UserDetails() {
   const { id } = useLocalSearchParams();

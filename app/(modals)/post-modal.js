@@ -28,12 +28,11 @@ export default function PostModal() {
   const [image, setImage] = useState("");
   const [location, setLocation] = useState({});
   const router = useRouter();
-
-  const API_URL = "https://expo-post-app-default-rtdb.firebaseio.com";
+  const { EXPO_PUBLIC_API_URL } = process.env;
 
   useEffect(() => {
     async function getPost() {
-      const response = await fetch(`${API_URL}/posts/${id}.json`);
+      const response = await fetch(`${EXPO_PUBLIC_API_URL}/posts/${id}.json`);
       const data = await response.json();
       setImage(data.image);
       setCaption(data.caption);
@@ -73,7 +72,7 @@ export default function PostModal() {
       caption: caption,
       image: image
     };
-    const response = await fetch(`${API_URL}/posts/${id}.json`, {
+    const response = await fetch(`${EXPO_PUBLIC_API_URL}/posts/${id}.json`, {
       method: "PATCH",
       body: JSON.stringify(post)
     });

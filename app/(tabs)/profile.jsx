@@ -28,7 +28,9 @@ export default function Profile() {
   const [mail, setMail] = useState("");
   const [image, setImage] = useState("");
   const router = useRouter();
-  const url = `https://expo-post-app-default-rtdb.firebaseio.com/users/${auth.currentUser?.uid}.json`;
+  const { EXPO_PUBLIC_API_URL } = process.env;
+
+  const url = `${EXPO_PUBLIC_API_URL}/${auth.currentUser?.uid}.json`;
 
   useEffect(() => {
     setMail(auth.currentUser.email);

@@ -6,14 +6,14 @@ import { primary } from "../../../constants/ThemeVariables";
 export default function Users() {
   const [users, setUsers] = useState([]);
   const [refreshing, setRefreshing] = useState(false);
-  const API_URL = "https://expo-post-app-default-rtdb.firebaseio.com";
+  const { EXPO_PUBLIC_API_URL } = process.env;
 
   useEffect(() => {
     getUsers();
   }, []);
 
   async function getUsers() {
-    const response = await fetch(`${API_URL}/users.json`);
+    const response = await fetch(`${EXPO_PUBLIC_API_URL}/users.json`);
     const dataObj = await response.json();
     const usersArray = Object.keys(dataObj).map(key => ({
       id: key,

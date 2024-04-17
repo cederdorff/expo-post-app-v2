@@ -4,11 +4,13 @@ import { Image, StyleSheet, Text, View } from "react-native";
 
 export default function Avatar({ userId }) {
   const [user, setUser] = useState([]);
-  const API_URL = "https://expo-post-app-default-rtdb.firebaseio.com";
+  const { EXPO_PUBLIC_API_URL } = process.env;
 
   useEffect(() => {
     async function getUser() {
-      const response = await fetch(`${API_URL}/users/${userId}.json`);
+      const response = await fetch(
+        `${EXPO_PUBLIC_API_URL}/users/${userId}.json`
+      );
       const data = await response.json();
       setUser(data);
     }

@@ -14,7 +14,7 @@ import { primary, secondary } from "@/constants/ThemeVariables";
 
 export default function Post({ post, reload }) {
   const { showActionSheetWithOptions } = useActionSheet();
-  const API_URL = "https://expo-post-app-default-rtdb.firebaseio.com";
+  const { EXPO_PUBLIC_API_URL } = process.env;
   const router = useRouter();
 
   function formatDate(timestamp) {
@@ -82,9 +82,12 @@ export default function Post({ post, reload }) {
   }
 
   async function deletePost() {
-    const response = await fetch(`${API_URL}/posts/${post.id}.json`, {
-      method: "DELETE"
-    });
+    const response = await fetch(
+      `${EXPO_PUBLIC_API_URL}/posts/${post.id}.json`,
+      {
+        method: "DELETE"
+      }
+    );
     if (response.ok) {
       console.log("Post deleted!");
       reload();

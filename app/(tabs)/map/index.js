@@ -8,7 +8,7 @@ import MapMarker from "../../components/MapMarker";
 export default function Map() {
   const [posts, setPosts] = useState([]);
   const [location, setLocation] = useState({});
-  const API_URL = "https://expo-post-app-default-rtdb.firebaseio.com";
+  const { EXPO_PUBLIC_API_URL } = process.env;
 
   useEffect(() => {
     getPosts();
@@ -38,7 +38,7 @@ export default function Map() {
   );
 
   async function getPosts() {
-    const response = await fetch(`${API_URL}/posts.json`);
+    const response = await fetch(`${EXPO_PUBLIC_API_URL}/posts.json`);
     const dataObj = await response.json();
     const postsArray = Object.keys(dataObj).map(key => ({
       id: key,

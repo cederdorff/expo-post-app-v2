@@ -79,10 +79,10 @@ function RootLayoutNav() {
             options={{
               presentation: "modal",
               headerStyle: {
-                backgroundColor: { primary },
-                headerTintColor: { tintColorLight }
+                backgroundColor: primary,
+                headerTintColor: tintColorLight
               },
-              headerTintColor: { tintColorLight },
+              headerTintColor: tintColorLight,
               headerTitleStyle: {
                 fontWeight: "bold"
               }

@@ -14,6 +14,13 @@ import {
   View
 } from "react-native";
 import { auth } from "../../firebase-config";
+import {
+  borderRadius,
+  labelFontSize,
+  primary,
+  secondary,
+  tintColorLight
+} from "../../constants/Colors";
 
 export default function Profile() {
   const [name, setName] = useState("");
@@ -82,7 +89,7 @@ export default function Profile() {
           headerRight: () => (
             <Button
               title="Sign Out"
-              color={Platform.OS === "ios" ? "#fff" : "#264c59"}
+              color={Platform.OS === "ios" ? tintColorLight : primary}
               onPress={handleSignOut}
             />
           )
@@ -126,7 +133,7 @@ export default function Profile() {
           editable={false}
         />
         <View style={styles.buttonContainer}>
-          <Button title="Save" color="#264c59" onPress={handleSaveUser} />
+          <Button title="Save" color={primary} onPress={handleSaveUser} />
         </View>
       </View>
     </ScrollView>
@@ -137,23 +144,28 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 24,
-    backgroundColor: "#acc6c9"
+    backgroundColor: secondary
   },
   label: {
-    fontSize: 25,
-    color: "#264c59",
+    fontSize: labelFontSize,
+    color: primary,
     marginTop: 30,
     marginBottom: 5
   },
   input: {
     height: 50,
     padding: 10,
-    backgroundColor: "#ffffff",
-    borderRadius: 20,
+    backgroundColor: tintColorLight,
+    borderRadius: borderRadius,
+    borderColor: primary,
+    borderWidth: 2,
     marginVertical: 10
   },
   image: {
-    aspectRatio: 1
+    aspectRatio: 1,
+    borderRadius: borderRadius,
+    borderWidth: 2,
+    borderColor: primary
   },
   buttonContainer: {
     marginBottom: 50

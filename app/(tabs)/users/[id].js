@@ -2,6 +2,7 @@ import { Stack, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import { Image, StyleSheet, Text, View, ScrollView } from "react-native";
 import Post from "../../components/Post";
+import { primary, secondary, tintColorLight } from "../../../constants/Colors";
 
 export default function UserDetails() {
   const { id } = useLocalSearchParams();
@@ -65,11 +66,11 @@ const styles = StyleSheet.create({
   userNameContainer: {
     paddingVertical: 16,
     alignItems: "center",
-    backgroundColor: "#264c59"
+    backgroundColor: primary
   },
   userTitle: {
     fontSize: 16,
-    color: "#ffffff",
+    color: tintColorLight,
     paddingVertical: 4
   },
   postHeader: {
@@ -77,8 +78,8 @@ const styles = StyleSheet.create({
     paddingTop: 45,
     paddingBottom: 15,
     paddingHorizontal: 12,
-    backgroundColor: "#acc6c9",
-    color: "#264c59",
+    backgroundColor: secondary,
+    color: primary,
     fontWeight: "bold"
   }
 });

@@ -22,5 +22,14 @@ const primary = "#264c59";
 const secondary = "#acc6c9";
 const tintColorLight = "#fff";
 const tintColorDark = primary;
+const borderRadius = 7;
+const labelFontSize = 20;
 
-export { primary, secondary, tintColorLight, tintColorDark };
+export {
+  primary,
+  secondary,
+  tintColorLight,
+  tintColorDark,
+  borderRadius,
+  labelFontSize
+};

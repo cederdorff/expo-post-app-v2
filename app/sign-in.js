@@ -2,7 +2,13 @@ import { Stack, useRouter } from "expo-router";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
-import { primary, secondary, tintColorLight } from "../constants/Colors";
+import {
+  borderRadius,
+  labelFontSize,
+  primary,
+  secondary,
+  tintColorLight
+} from "../constants/Colors";
 
 export default function SignIn() {
   const [mail, setMail] = useState("");
@@ -77,7 +83,7 @@ const styles = StyleSheet.create({
     aspectRatio: 1
   },
   label: {
-    fontSize: 25,
+    fontSize: labelFontSize,
     color: primary,
     marginTop: 30,
     marginBottom: 5
@@ -86,7 +92,7 @@ const styles = StyleSheet.create({
     height: 50,
     padding: 10,
     backgroundColor: tintColorLight,
-    borderRadius: 20,
+    borderRadius: borderRadius,
     marginVertical: 20
   },
   errorMessage: {

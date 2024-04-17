@@ -1,21 +1,22 @@
 import { Stack } from "expo-router";
+import { primary, tintColorLight } from "../../../constants/Colors";
 
 export default function UsersLayout() {
-    return (
-        <Stack
-            screenOptions={{
-                headerStyle: {
-                    backgroundColor: "#264c59"
-                },
-                headerTintColor: "#fff",
-                headerTitleStyle: {
-                    fontWeight: "bold"
-                },
-                tabBarStyle: {
-                    backgroundColor: "#264c59"
-                }
-            }}>
-            <Stack.Screen name="index" options={{ title: "Users" }} />
-        </Stack>
-    );
+  return (
+    <Stack
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: primary
+        },
+        headerTintColor: tintColorLight,
+        headerTitleStyle: {
+          fontWeight: "bold"
+        },
+        tabBarStyle: {
+          backgroundColor: primary
+        }
+      }}>
+      <Stack.Screen name="index" options={{ title: "Users" }} />
+    </Stack>
+  );
 }

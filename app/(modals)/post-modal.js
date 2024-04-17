@@ -13,6 +13,13 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
+import {
+  borderRadius,
+  labelFontSize,
+  primary,
+  secondary,
+  tintColorLight
+} from "../../constants/Colors";
 import { auth } from "../../firebase-config";
 
 export default function PostModal() {
@@ -131,12 +138,16 @@ export default function PostModal() {
         options={{
           title: id ? "Update Post" : "Create Post",
           headerLeft: () => (
-            <Button title="Cancel" color="#fff" onPress={() => router.back()} />
+            <Button
+              title="Cancel"
+              color={tintColorLight}
+              onPress={() => router.back()}
+            />
           ),
           headerRight: () => (
             <Button
               title={id ? "Update" : "Create"}
-              color="#fff"
+              color={tintColorLight}
               onPress={handleSave}
             />
           )
@@ -176,24 +187,29 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 24,
-    backgroundColor: "#acc6c9"
+    backgroundColor: secondary
   },
   main: {
     flex: 1
   },
   image: {
-    aspectRatio: 1
+    aspectRatio: 1,
+    borderRadius: borderRadius,
+    borderColor: primary,
+    borderWidth: 2
   },
   label: {
-    fontSize: 25,
-    color: "#264c59",
+    fontSize: labelFontSize,
+    color: primary,
     marginTop: 30,
     marginBottom: 5
   },
   input: {
     height: 50,
     padding: 10,
-    backgroundColor: "#ffffff",
-    borderRadius: 20
+    backgroundColor: tintColorLight,
+    borderRadius: borderRadius,
+    borderColor: primary,
+    borderWidth: 2
   }
 });

@@ -1,18 +1,19 @@
 import { Stack } from "expo-router";
+import { primary, tintColorLight } from "../../../constants/Colors";
 
 export default function MapLayout() {
   return (
     <Stack
       screenOptions={{
         headerStyle: {
-          backgroundColor: "#264c59"
+          backgroundColor: primary
         },
-        headerTintColor: "#fff",
+        headerTintColor: tintColorLight,
         headerTitleStyle: {
           fontWeight: "bold"
         },
         tabBarStyle: {
-          backgroundColor: "#264c59"
+          backgroundColor: primary
         }
       }}>
       <Stack.Screen name="index" options={{ title: "Map" }} />

@@ -13,6 +13,7 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
+import Toast from "react-native-root-toast";
 import {
   borderRadius,
   labelFontSize,
@@ -22,7 +23,6 @@ import {
 } from "../../constants/ThemeVariables";
 import { auth } from "../../firebase-config";
 import ThemeButton from "../components/ThemeButton";
-import Toast from "react-native-root-toast";
 
 export default function PostModal() {
   const { id } = useLocalSearchParams();
@@ -96,6 +96,8 @@ export default function PostModal() {
     if (response.ok) {
       Toast.show("Post successfully updated");
       router.back();
+    } else {
+      Toast.show("Sorry, something went wrong. Please try again.");
     }
   }
 
@@ -116,6 +118,8 @@ export default function PostModal() {
     if (response.ok) {
       Toast.show("Post successfully created");
       router.back();
+    } else {
+      Toast.show("Sorry, something went wrong. Please try again.");
     }
   }
 

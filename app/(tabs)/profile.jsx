@@ -30,7 +30,7 @@ export default function Profile() {
   const router = useRouter();
   const { EXPO_PUBLIC_API_URL } = process.env;
 
-  const url = `${EXPO_PUBLIC_API_URL}/${auth.currentUser?.uid}.json`;
+  const url = `${EXPO_PUBLIC_API_URL}/users/${auth.currentUser?.uid}.json`;
 
   useEffect(() => {
     setMail(auth.currentUser.email);
@@ -72,6 +72,7 @@ export default function Profile() {
     const userToUpdate = { name: name, mail: mail, title, image }; // create an object to hold the user to update properties
     console.log(userToUpdate);
 
+    console.log("URL: ", url);
     const response = await fetch(url, {
       method: "PUT",
       body: JSON.stringify(userToUpdate)

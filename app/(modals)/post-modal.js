@@ -57,9 +57,7 @@ export default function PostModal() {
       setLocation(await getLocation());
     }
 
-    if (!id) {
-      loadLocation();
-    }
+    loadLocation();
   }, []);
 
   async function getLocation() {

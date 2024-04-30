@@ -4,6 +4,7 @@ import { useFonts } from "expo-font";
 import { Stack, useRouter } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
+import { RootSiblingParent } from "react-native-root-siblings";
 
 import { primary, tintColorLight } from "@/constants/ThemeVariables";
 import { auth } from "@/firebase-config";
@@ -62,29 +63,31 @@ function RootLayoutNav() {
   });
 
   return (
-    <ActionSheetProvider>
-      {/* <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}> */}
-      <ThemeProvider value={DefaultTheme}>
-        <StatusBar style="light" />
+    <RootSiblingParent>
+      <ActionSheetProvider>
+        {/* <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}> */}
+        <ThemeProvider value={DefaultTheme}>
+          <StatusBar style="light" />
 
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen
-            name="(modals)/post-modal"
-            options={{
-              presentation: "modal",
-              headerStyle: {
-                backgroundColor: primary,
-                headerTintColor: tintColorLight
-              },
-              headerTintColor: tintColorLight,
-              headerTitleStyle: {
-                fontWeight: "bold"
-              }
-            }}
-          />
-        </Stack>
-      </ThemeProvider>
-    </ActionSheetProvider>
+          <Stack>
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            <Stack.Screen
+              name="(modals)/post-modal"
+              options={{
+                presentation: "modal",
+                headerStyle: {
+                  backgroundColor: primary,
+                  headerTintColor: tintColorLight
+                },
+                headerTintColor: tintColorLight,
+                headerTitleStyle: {
+                  fontWeight: "bold"
+                }
+              }}
+            />
+          </Stack>
+        </ThemeProvider>
+      </ActionSheetProvider>
+    </RootSiblingParent>
   );
 }

@@ -5,8 +5,6 @@ import { Callout, Marker } from "react-native-maps";
 export default function MapMarker({ post }) {
   const router = useRouter();
 
-  console.log(post);
-
   function handleCalloutPress(id) {
     router.push(`map/${id}`);
   }

@@ -70,9 +70,7 @@ export default function Profile() {
 
   async function handleSaveUser() {
     const userToUpdate = { name: name, mail: mail, title, image }; // create an object to hold the user to update properties
-    console.log(userToUpdate);
 
-    console.log("URL: ", url);
     const response = await fetch(url, {
       method: "PUT",
       body: JSON.stringify(userToUpdate)

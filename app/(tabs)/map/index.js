@@ -23,7 +23,6 @@ export default function Map() {
       }
       const currentLocation = await Location.getCurrentPositionAsync();
       setLocation(currentLocation.coords);
-      console.log(location);
     }
     requestLocationPersmissions();
   }, []);

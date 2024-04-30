@@ -1,20 +1,15 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider
-} from "@react-navigation/native";
+import { DefaultTheme, ThemeProvider } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { Stack, useRouter } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 
-import { useColorScheme } from "@/components/useColorScheme";
+import { primary, tintColorLight } from "@/constants/ThemeVariables";
+import { auth } from "@/firebase-config";
 import { ActionSheetProvider } from "@expo/react-native-action-sheet";
 import { StatusBar } from "expo-status-bar";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "@/firebase-config";
-import { primary, tintColorLight } from "@/constants/ThemeVariables";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -54,7 +49,6 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-  const colorScheme = useColorScheme();
   const router = useRouter();
 
   useEffect(() => {
@@ -69,7 +63,8 @@ function RootLayoutNav() {
 
   return (
     <ActionSheetProvider>
-      <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+      {/* <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}> */}
+      <ThemeProvider value={DefaultTheme}>
         <StatusBar style="light" />
 
         <Stack>

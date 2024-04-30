@@ -67,8 +67,7 @@ export default function PostModal() {
       `https://api.opencagedata.com/geocode/v1/json?q=${currentLocation.coords.latitude}+${currentLocation.coords.longitude}&key=${EXPO_PUBLIC_OPEN_CAGE_API_KEY}`
     );
     const data = await response.json();
-    console.log("============= currentLocation =============", currentLocation);
-    console.log(data);
+
     return {
       latitude: currentLocation.coords.latitude,
       longitude: currentLocation.coords.longitude,
@@ -109,7 +108,6 @@ export default function PostModal() {
       uid: auth.currentUser.uid
     };
 
-    console.log(post);
     const response = await fetch(`${API_URL}/posts.json`, {
       method: "POST",
       body: JSON.stringify(post)

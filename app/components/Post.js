@@ -90,7 +90,6 @@ export default function Post({ post, reload }) {
       }
     );
     if (response.ok) {
-      console.log("Post deleted!");
       reload();
     }
   }

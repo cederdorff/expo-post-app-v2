@@ -22,7 +22,6 @@ export default function UserDetails() {
   async function getUser() {
     const response = await fetch(`${EXPO_PUBLIC_API_URL}/users/${id}.json`);
     const data = await response.json();
-    console.log(data);
     setUser(data);
   }
 

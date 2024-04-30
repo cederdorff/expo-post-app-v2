@@ -9,7 +9,7 @@ import {
   secondary,
   tintColorLight
 } from "../constants/ThemeVariables";
-import ThemeButton from "./components/ThemeButton";
+import StyledButton from "./components/StyledButton";
 import Toast from "react-native-root-toast";
 import Profile from "./(tabs)/profile";
 
@@ -63,7 +63,7 @@ export default function SignUp() {
         placeholder="Type your password"
       />
       <Text style={styles.errorMessage}>{message}</Text>
-      <ThemeButton
+      <StyledButton
         text="Create Account"
         style="primary"
         onPress={handleSignUp}

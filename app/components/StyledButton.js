@@ -8,7 +8,7 @@ import {
   tintColorLight
 } from "../../constants/ThemeVariables";
 
-export default function ThemeButton({ text, onPress, style }) {
+export default function StyledButton({ text, onPress, style }) {
   return (
     <TouchableOpacity
       style={

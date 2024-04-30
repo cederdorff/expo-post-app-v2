@@ -9,7 +9,7 @@ import {
   secondary,
   tintColorLight
 } from "../constants/ThemeVariables";
-import ThemeButton from "./components/ThemeButton";
+import StyledButton from "./components/StyledButton";
 
 export default function SignIn() {
   const [mail, setMail] = useState("");
@@ -65,8 +65,8 @@ export default function SignIn() {
         placeholder="Type your password"
       />
       <Text style={styles.errorMessage}>{message}</Text>
-      <ThemeButton text="Sign In" onPress={handleSignIn} style="primary" />
-      <ThemeButton
+      <StyledButton text="Sign In" onPress={handleSignIn} style="primary" />
+      <StyledButton
         text="Create New Account"
         onPress={goToSignUp}
         style="secondary"

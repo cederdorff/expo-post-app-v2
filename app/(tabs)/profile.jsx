@@ -13,17 +13,16 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
-import { auth } from "../../firebase-config";
+import Toast from "react-native-root-toast";
 import {
   borderRadius,
   labelFontSize,
   primary,
   secondary,
-  tintColorDark,
   tintColorLight
 } from "../../constants/ThemeVariables";
-import ThemeButton from "../components/ThemeButton";
-import Toast from "react-native-root-toast";
+import { auth } from "../../firebase-config";
+import StyledButton from "../components/StyledButton";
 
 export default function Profile() {
   const [name, setName] = useState("");
@@ -138,7 +137,7 @@ export default function Profile() {
           editable={false}
         />
         <View style={styles.buttonContainer}>
-          <ThemeButton text="Save" style="primary" onPress={handleSaveUser} />
+          <StyledButton text="Save" style="primary" onPress={handleSaveUser} />
         </View>
       </View>
     </ScrollView>

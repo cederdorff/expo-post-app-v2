@@ -10,6 +10,8 @@ import {
   tintColorLight
 } from "../constants/ThemeVariables";
 import ThemeButton from "./components/ThemeButton";
+import Toast from "react-native-root-toast";
+import Profile from "./(tabs)/profile";
 
 export default function SignUp() {
   const [mail, setMail] = useState("");
@@ -24,6 +26,7 @@ export default function SignUp() {
         // Signed in
         const user = userCredential.user;
         console.log(user);
+        Toast.show('Account created. Go to "Profile" to update your profile.');
         router.replace("/");
       })
       .catch(error => {

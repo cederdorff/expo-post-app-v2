@@ -12,6 +12,7 @@ import {
 import Avatar from "./Avatar";
 import { primary, secondary, tintColorLight } from "@/constants/ThemeVariables";
 import { auth } from "@/firebase-config";
+import Toast from "react-native-root-toast";
 
 export default function Post({ post, reload }) {
   const { showActionSheetWithOptions } = useActionSheet();
@@ -90,6 +91,7 @@ export default function Post({ post, reload }) {
       }
     );
     if (response.ok) {
+      Toast.show("Post successfully deleted");
       reload();
     }
   }

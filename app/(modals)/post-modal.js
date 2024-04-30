@@ -22,6 +22,7 @@ import {
 } from "../../constants/ThemeVariables";
 import { auth } from "../../firebase-config";
 import ThemeButton from "../components/ThemeButton";
+import Toast from "react-native-root-toast";
 
 export default function PostModal() {
   const { id } = useLocalSearchParams();
@@ -93,6 +94,7 @@ export default function PostModal() {
       body: JSON.stringify(post)
     });
     if (response.ok) {
+      Toast.show("Post successfully updated");
       router.back();
     }
   }
@@ -107,11 +109,12 @@ export default function PostModal() {
       uid: auth.currentUser.uid
     };
 
-    const response = await fetch(`${API_URL}/posts.json`, {
+    const response = await fetch(`${EXPO_PUBLIC_API_URL}/posts.json`, {
       method: "POST",
       body: JSON.stringify(post)
     });
     if (response.ok) {
+      Toast.show("Post successfully created");
       router.back();
     }
   }

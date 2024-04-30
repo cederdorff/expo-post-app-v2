@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import Avatar from "./Avatar";
 import { primary, secondary } from "@/constants/ThemeVariables";
+import { auth } from "@/firebase-config";
 
 export default function Post({ post, reload }) {
   const { showActionSheetWithOptions } = useActionSheet();
@@ -98,9 +99,11 @@ export default function Post({ post, reload }) {
     <View style={styles.postContainer}>
       <View style={styles.headerContainer}>
         <Avatar userId={post.uid} />
-        <TouchableOpacity style={styles.dots} onPress={showEditMenu}>
-          <Ionicons name="ellipsis-horizontal" size={28} color={primary} />
-        </TouchableOpacity>
+        {auth.currentUser.uid === post.uid ? (
+          <TouchableOpacity style={styles.dots} onPress={showEditMenu}>
+            <Ionicons name="ellipsis-horizontal" size={28} color={primary} />
+          </TouchableOpacity>
+        ) : null}
       </View>
       <Image style={styles.image} source={{ uri: post.image }} />
       <Text style={styles.caption}>{post.caption}</Text>

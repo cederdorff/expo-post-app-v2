@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import { primary, tintColorLight } from "../../../constants/ThemeVariables";
+import { primary, tintColorLight } from "@/constants/ThemeVariables";
 
 export default function MapLayout() {
   return (

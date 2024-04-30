@@ -40,7 +40,6 @@ export default function Map() {
       id: key,
       ...dataObj[key]
     })); // from object to array
-    postsArray.sort((postA, postB) => postB.createdAt - postA.createdAt); // sort by timestamp/ createdBy
     setPosts(postsArray);
   }
 

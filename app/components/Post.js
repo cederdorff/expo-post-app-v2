@@ -10,7 +10,7 @@ import {
   View
 } from "react-native";
 import Avatar from "./Avatar";
-import { primary, secondary } from "@/constants/ThemeVariables";
+import { primary, secondary, tintColorLight } from "@/constants/ThemeVariables";
 import { auth } from "@/firebase-config";
 
 export default function Post({ post, reload }) {
@@ -122,7 +122,8 @@ const styles = StyleSheet.create({
     minHeight: 320,
     paddingBottom: 30,
     borderBottomColor: secondary,
-    borderBottomWidth: 0.5
+    borderBottomWidth: 1,
+    backgroundColor: tintColorLight
   },
   headerContainer: {
     alignItems: "center",

@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 12,
     borderBottomColor: secondary,
-    borderBottomWidth: 0.5
+    borderBottomWidth: 1
   },
   userImageContainer: {
     alignItems: "center",

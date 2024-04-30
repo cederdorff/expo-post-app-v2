@@ -56,8 +56,26 @@ export default function PostModal() {
       setLocation(await getLocation());
     }
 
-    loadLocation();
+    if (!id) {
+      loadLocation();
+    }
   }, []);
+
+  async function getLocation() {
+    const currentLocation = await Location.getCurrentPositionAsync();
+    const response = await fetch(
+      `https://api.opencagedata.com/geocode/v1/json?q=${currentLocation.coords.latitude}+${currentLocation.coords.longitude}&key=${EXPO_PUBLIC_OPEN_CAGE_API_KEY}`
+    );
+    const data = await response.json();
+    console.log("============= currentLocation =============", currentLocation);
+    console.log(data);
+    return {
+      latitude: currentLocation.coords.latitude,
+      longitude: currentLocation.coords.longitude,
+      city: data.results[0].components.city,
+      country: data.results[0].components.country
+    };
+  }
 
   function handleSave() {
     if (id) {
@@ -79,21 +97,6 @@ export default function PostModal() {
     if (response.ok) {
       router.back();
     }
-  }
-
-  async function getLocation() {
-    const currentLocation = await Location.getCurrentPositionAsync();
-    const response = await fetch(
-      `https://api.opencagedata.com/geocode/v1/json?q=${currentLocation.coords.latitude}+${currentLocation.coords.longitude}&key=${EXPO_PUBLIC_OPEN_CAGE_API_KEY}`
-    );
-    const data = await response.json();
-    console.log(data);
-    return {
-      latitude: currentLocation.coords.latitude,
-      longitude: currentLocation.coords.longitude,
-      city: data.results[0].components.city,
-      country: data.results[0].components.country
-    };
   }
 
   async function createPost() {

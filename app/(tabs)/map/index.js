@@ -3,11 +3,10 @@ import { useFocusEffect } from "expo-router";
 import { useCallback, useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import MapView from "react-native-maps";
-import MapMarker from "../../components/MapMarker";
+import MapMarker from "@/components/MapMarker";
 
 export default function Map() {
   const [posts, setPosts] = useState([]);
-  const [location, setLocation] = useState({});
   const { EXPO_PUBLIC_API_URL } = process.env;
 
   useEffect(() => {
@@ -21,8 +20,6 @@ export default function Map() {
         setErrorMsg("Permission to access location was denied");
         return;
       }
-      const currentLocation = await Location.getCurrentPositionAsync();
-      setLocation(currentLocation.coords);
     }
     requestLocationPersmissions();
   }, []);

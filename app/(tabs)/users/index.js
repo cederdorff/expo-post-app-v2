@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FlatList, RefreshControl, StyleSheet, View } from "react-native";
-import User from "../../components/User";
+import User from "@/components/User";
 import { primary } from "../../../constants/ThemeVariables";
 
 export default function Users() {

@@ -6,7 +6,7 @@ import {
   secondary,
   tintColorDark,
   tintColorLight
-} from "../../constants/ThemeVariables";
+} from "../constants/ThemeVariables";
 
 export default function StyledButton({ text, onPress, style }) {
   return (

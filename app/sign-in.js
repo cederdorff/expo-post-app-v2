@@ -9,7 +9,7 @@ import {
   secondary,
   tintColorLight
 } from "../constants/ThemeVariables";
-import StyledButton from "./components/StyledButton";
+import StyledButton from "../components/StyledButton";
 
 export default function SignIn() {
   const [mail, setMail] = useState("");

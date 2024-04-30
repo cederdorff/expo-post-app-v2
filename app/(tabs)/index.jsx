@@ -1,14 +1,8 @@
-import { Stack, useFocusEffect, useRouter } from "expo-router";
-import { useCallback, useEffect, useState } from "react";
-import {
-  Button,
-  FlatList,
-  RefreshControl,
-  StyleSheet,
-  View
-} from "react-native";
-import Post from "../components/Post";
 import { tintColorDark } from "@/constants/ThemeVariables";
+import { useFocusEffect, useRouter } from "expo-router";
+import { useCallback, useEffect, useState } from "react";
+import { FlatList, RefreshControl, StyleSheet, View } from "react-native";
+import Post from "@/components/Post";
 
 export default function Posts() {
   const [posts, setPosts] = useState([]);

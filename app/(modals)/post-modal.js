@@ -22,7 +22,7 @@ import {
   tintColorLight
 } from "../../constants/ThemeVariables";
 import { auth } from "../../firebase-config";
-import StyledButton from "../components/StyledButton";
+import StyledButton from "../../components/StyledButton";
 
 export default function PostModal() {
   const { id } = useLocalSearchParams();

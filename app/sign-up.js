@@ -9,7 +9,7 @@ import {
   secondary,
   tintColorLight
 } from "../constants/ThemeVariables";
-import StyledButton from "./components/StyledButton";
+import StyledButton from "../components/StyledButton";
 import Toast from "react-native-root-toast";
 import Profile from "./(tabs)/profile";
 

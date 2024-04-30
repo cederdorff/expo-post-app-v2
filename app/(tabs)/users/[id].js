@@ -1,7 +1,7 @@
 import { Stack, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import { Image, StyleSheet, Text, View, ScrollView } from "react-native";
-import Post from "../../components/Post";
+import Post from "@/components/Post";
 import {
   primary,
   secondary,

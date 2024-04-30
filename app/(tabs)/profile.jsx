@@ -19,8 +19,10 @@ import {
   labelFontSize,
   primary,
   secondary,
+  tintColorDark,
   tintColorLight
 } from "../../constants/ThemeVariables";
+import ThemeButton from "../components/ThemeButton";
 
 export default function Profile() {
   const [name, setName] = useState("");
@@ -134,7 +136,7 @@ export default function Profile() {
           editable={false}
         />
         <View style={styles.buttonContainer}>
-          <Button title="Save" color={primary} onPress={handleSaveUser} />
+          <ThemeButton text="Save" style="primary" onPress={handleSaveUser} />
         </View>
       </View>
     </ScrollView>
@@ -159,8 +161,7 @@ const styles = StyleSheet.create({
     backgroundColor: tintColorLight,
     borderRadius: borderRadius,
     borderColor: primary,
-    borderWidth: 2,
-    marginVertical: 10
+    borderWidth: 2
   },
   image: {
     aspectRatio: 1,
@@ -169,6 +170,7 @@ const styles = StyleSheet.create({
     borderColor: primary
   },
   buttonContainer: {
-    marginBottom: 50
+    marginBottom: 50,
+    marginTop: 20
   }
 });

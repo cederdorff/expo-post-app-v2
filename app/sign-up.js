@@ -9,6 +9,7 @@ import {
   secondary,
   tintColorLight
 } from "../constants/ThemeVariables";
+import ThemeButton from "./components/ThemeButton";
 
 export default function SignUp() {
   const [mail, setMail] = useState("");
@@ -59,7 +60,11 @@ export default function SignUp() {
         placeholder="Type your password"
       />
       <Text style={styles.errorMessage}>{message}</Text>
-      <Button title="Create account" color={primary} onPress={handleSignUp} />
+      <ThemeButton
+        text="Create Account"
+        style="primary"
+        onPress={handleSignUp}
+      />
     </View>
   );
 }
@@ -87,7 +92,6 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: tintColorLight,
     borderRadius: borderRadius,
-    marginVertical: 20,
     borderRadius: borderRadius,
     borderColor: primary,
     borderWidth: 2

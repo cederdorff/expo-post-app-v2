@@ -21,6 +21,7 @@ import {
   tintColorLight
 } from "../../constants/ThemeVariables";
 import { auth } from "../../firebase-config";
+import ThemeButton from "../components/ThemeButton";
 
 export default function PostModal() {
   const { id } = useLocalSearchParams();
@@ -177,6 +178,11 @@ export default function PostModal() {
           style={styles.input}
           value={`${location.city}, ${location.country}`}
           editable={false}
+        />
+        <ThemeButton
+          text={id ? "Update Post" : "Create Post"}
+          onPress={handleSave}
+          style="primary"
         />
       </KeyboardAvoidingView>
     </View>

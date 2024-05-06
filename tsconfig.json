@@ -18,6 +18,7 @@
     "app/modal.jsx",
     "app/+not-found.jsx",
     "app/+html.jsx",
-    "constants/ThemeVariables.jsx"
+    "constants/ThemeVariables.jsx",
+    "components/ExternalLink.jsx"
   ]
 }

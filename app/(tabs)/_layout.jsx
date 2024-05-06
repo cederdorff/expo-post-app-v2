@@ -3,7 +3,6 @@ import { Link, Tabs } from "expo-router";
 import React from "react";
 import { Button } from "react-native";
 
-import { useClientOnlyValue } from "@/components/useClientOnlyValue";
 import { primary, secondary, tintColorLight } from "@/constants/ThemeVariables";
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
@@ -18,9 +17,6 @@ export default function TabLayout() {
         tabBarActiveTintColor: primary,
         tabBarInactiveTintColor: tintColorLight,
         tabBarActiveBackgroundColor: secondary,
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
         headerStyle: {
           backgroundColor: primary
         },

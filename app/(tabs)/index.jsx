@@ -50,18 +50,7 @@ export default function Posts() {
 
   return (
     <View style={styles.list}>
-      <FlatList
-        data={posts}
-        renderItem={renderPost}
-        keyExtractor={post => post.id}
-        refreshControl={
-          <RefreshControl
-            refreshing={refreshing}
-            onRefresh={handleRefresh}
-            tintColor={tintColorDark}
-          />
-        }
-      />
+      <FlatList data={posts} renderItem={renderPost} keyExtractor={post => post.id} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={handleRefresh} tintColor={tintColorDark} />} />
     </View>
   );
 }

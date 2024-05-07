@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import { Image, StyleSheet, Text, View, ScrollView } from "react-native";
 import Post from "@/components/Post";
 import {
+  labelFontSize,
   primary,
   secondary,
+  tintColorDark,
   tintColorLight
 } from "../../../constants/ThemeVariables";
 
@@ -69,18 +71,20 @@ const styles = StyleSheet.create({
   userNameContainer: {
     paddingVertical: 16,
     alignItems: "center",
-    backgroundColor: primary
+    backgroundColor: secondary
   },
   userTitle: {
     fontSize: 16,
-    color: tintColorLight,
+    fontWeight: "bold",
+    color: tintColorDark,
     paddingVertical: 4
   },
   postHeader: {
-    fontSize: 22,
-    paddingTop: 45,
-    paddingBottom: 15,
+    fontSize: labelFontSize,
+    paddingTop: 30,
+    paddingBottom: 30,
     paddingHorizontal: 12,
+    textAlign: "center",
     backgroundColor: secondary,
     color: primary,
     fontWeight: "bold"

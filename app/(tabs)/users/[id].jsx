@@ -1,13 +1,12 @@
+import Post from "@/components/Post";
 import { Stack, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
-import { Image, StyleSheet, Text, View, ScrollView } from "react-native";
-import Post from "@/components/Post";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import {
   labelFontSize,
   primary,
   secondary,
-  tintColorDark,
-  tintColorLight
+  tintColorDark
 } from "../../../constants/ThemeVariables";
 
 export default function UserDetails() {

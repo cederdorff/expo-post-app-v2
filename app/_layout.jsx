@@ -11,6 +11,7 @@ import { auth } from "@/firebase-config";
 import { ActionSheetProvider } from "@expo/react-native-action-sheet";
 import { StatusBar } from "expo-status-bar";
 import { onAuthStateChanged } from "firebase/auth";
+import "react-native-reanimated";
 
 export {
   // Catch any errors thrown by the Layout component.

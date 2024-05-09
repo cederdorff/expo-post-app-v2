@@ -17,7 +17,7 @@ export default function Map() {
     async function requestLocationPersmissions() {
       const { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== "granted") {
-        setErrorMsg("Permission to access location was denied");
+        console.log("Permission to access location was denied");
         return;
       }
     }

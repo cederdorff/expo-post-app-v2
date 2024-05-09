@@ -1,3 +1,4 @@
+import StyledButton from "@/components/StyledButton";
 import * as ImagePicker from "expo-image-picker";
 import * as Location from "expo-location";
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
@@ -5,12 +6,14 @@ import { useEffect, useState } from "react";
 import {
   Button,
   Image,
+  Keyboard,
   KeyboardAvoidingView,
   Platform,
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
+  TouchableWithoutFeedback,
   View
 } from "react-native";
 import Toast from "react-native-root-toast";
@@ -22,7 +25,6 @@ import {
   tintColorLight
 } from "../../constants/ThemeVariables";
 import { auth } from "../../firebase-config";
-import StyledButton from "@/components/StyledButton";
 
 export default function PostModal() {
   const { id } = useLocalSearchParams();
@@ -48,7 +50,7 @@ export default function PostModal() {
     async function requestLocationPersmissions() {
       const { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== "granted") {
-        setErrorMsg("Permission to access location was denied");
+        console.log("Permission to access location was denied");
         return;
       }
     }
@@ -138,59 +140,63 @@ export default function PostModal() {
   }
 
   return (
-    <View style={styles.container}>
-      <Stack.Screen
-        options={{
-          title: id ? "Update Post" : "Create Post",
-          headerLeft: () => (
-            <Button
-              title="Cancel"
-              color={tintColorLight}
-              onPress={() => router.back()}
-            />
-          ),
-          headerRight: () => (
-            <Button
-              title={id ? "Update" : "Create"}
-              color={tintColorLight}
-              onPress={handleSave}
-            />
-          )
-        }}
-      />
-      <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : "height"}>
-        <Text style={styles.label}>Image</Text>
-        <TouchableOpacity onPress={chooseImage}>
-          <Image
-            style={styles.image}
-            source={{
-              uri:
-                image ||
-                "https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg"
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={styles.container}>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={styles.inner}>
+          <Stack.Screen
+            options={{
+              title: id ? "Update Post" : "Create Post",
+              headerLeft: () => (
+                <Button
+                  title="Cancel"
+                  color={tintColorLight}
+                  onPress={() => router.back()}
+                />
+              ),
+              headerRight: () => (
+                <Button
+                  title={id ? "Update" : "Create"}
+                  color={tintColorLight}
+                  onPress={handleSave}
+                />
+              )
             }}
           />
-        </TouchableOpacity>
-        <Text style={styles.label}>Caption</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={setCaption}
-          value={caption}
-          placeholder="Type your caption"
-        />
-        <Text style={styles.label}>City</Text>
-        <TextInput
-          style={styles.input}
-          value={`${location.city}, ${location.country}`}
-          editable={false}
-        />
-        <StyledButton
-          text={id ? "Update Post" : "Create Post"}
-          onPress={handleSave}
-          style="primary"
-        />
-      </KeyboardAvoidingView>
-    </View>
+
+          <Text style={styles.label}>Image</Text>
+          <TouchableOpacity onPress={chooseImage}>
+            <Image
+              style={styles.image}
+              source={{
+                uri:
+                  image ||
+                  "https://cederdorff.com/race/images/placeholder-image.webp"
+              }}
+            />
+          </TouchableOpacity>
+          <Text style={styles.label}>Caption</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={setCaption}
+            value={caption}
+            placeholder="Type your caption"
+          />
+          <Text style={styles.label}>City</Text>
+          <TextInput
+            style={styles.input}
+            value={`${location.city}, ${location.country}`}
+            editable={false}
+          />
+          <StyledButton
+            text={id ? "Update Post" : "Create Post"}
+            onPress={handleSave}
+            style="primary"
+          />
+        </View>
+      </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
   );
 }
 
@@ -199,9 +205,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 24,
     backgroundColor: secondary
-  },
-  main: {
-    flex: 1
   },
   image: {
     aspectRatio: 1,

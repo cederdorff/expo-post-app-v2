@@ -1,4 +1,5 @@
 import StyledButton from "@/components/StyledButton";
+import { tintColorDark } from "@/constants/ThemeVariables";
 import * as ImagePicker from "expo-image-picker";
 import * as Location from "expo-location";
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
@@ -151,14 +152,14 @@ export default function PostModal() {
               headerLeft: () => (
                 <Button
                   title="Cancel"
-                  color={tintColorLight}
+                  color={Platform.OS === "ios" ? tintColorLight : tintColorDark}
                   onPress={() => router.back()}
                 />
               ),
               headerRight: () => (
                 <Button
                   title={id ? "Update" : "Create"}
-                  color={tintColorLight}
+                  color={Platform.OS === "ios" ? tintColorLight : tintColorDark}
                   onPress={handleSave}
                 />
               )

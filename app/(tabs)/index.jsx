@@ -1,13 +1,12 @@
+import Post from "@/components/Post";
 import { tintColorDark } from "@/constants/ThemeVariables";
-import { useFocusEffect, useRouter } from "expo-router";
+import { useFocusEffect } from "expo-router";
 import { useCallback, useEffect, useState } from "react";
 import { FlatList, RefreshControl, StyleSheet, View } from "react-native";
-import Post from "@/components/Post";
 
 export default function Posts() {
   const [posts, setPosts] = useState([]);
   const [refreshing, setRefreshing] = useState(false);
-  const router = useRouter();
 
   const { EXPO_PUBLIC_API_URL } = process.env;
 
@@ -50,7 +49,18 @@ export default function Posts() {
 
   return (
     <View style={styles.list}>
-      <FlatList data={posts} renderItem={renderPost} keyExtractor={post => post.id} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={handleRefresh} tintColor={tintColorDark} />} />
+      <FlatList
+        data={posts}
+        renderItem={renderPost}
+        keyExtractor={post => post.id}
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={handleRefresh}
+            tintColor={tintColorDark}
+          />
+        }
+      />
     </View>
   );
 }

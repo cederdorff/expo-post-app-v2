@@ -1,10 +1,28 @@
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
-import { borderRadius, borderWidth, primary, secondary, tintColorDark, tintColorLight } from "../constants/ThemeVariables";
+import {
+  borderRadius,
+  borderWidth,
+  primary,
+  secondary,
+  tintColorDark,
+  tintColorLight
+} from "../constants/ThemeVariables";
 
 export default function StyledButton({ text, onPress, style }) {
   return (
-    <TouchableOpacity style={style === "primary" ? styles.primaryButton : styles.secondaryButton} onPress={onPress}>
-      <Text style={style === "primary" ? styles.primaryButtonText : styles.secondaryButtonText}>{text}</Text>
+    <TouchableOpacity
+      style={
+        style === "primary" ? styles.primaryButton : styles.secondaryButton
+      }
+      onPress={onPress}>
+      <Text
+        style={
+          style === "primary"
+            ? styles.primaryButtonText
+            : styles.secondaryButtonText
+        }>
+        {text}
+      </Text>
     </TouchableOpacity>
   );
 }

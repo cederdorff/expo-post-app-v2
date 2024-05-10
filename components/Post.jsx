@@ -2,15 +2,21 @@ import { primary, secondary, tintColorLight } from "@/constants/ThemeVariables";
 import { auth } from "@/firebase-config";
 import { useActionSheet } from "@expo/react-native-action-sheet";
 import { Ionicons } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
-import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { router } from "expo-router";
+import {
+  Alert,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View
+} from "react-native";
 import Toast from "react-native-root-toast";
 import Avatar from "./Avatar";
 
 export default function Post({ post, reload }) {
   const { showActionSheetWithOptions } = useActionSheet();
   const { EXPO_PUBLIC_API_URL } = process.env;
-  const router = useRouter();
 
   function formatDate(timestamp) {
     const createdAt = new Date(timestamp);
@@ -63,19 +69,26 @@ export default function Post({ post, reload }) {
   }
 
   function showDeleteDialog() {
-    Alert.alert("Delete Post", `Do you want to delete post '${post.caption}'?`, [
-      {
-        text: "No",
-        style: "destructive"
-      },
-      { text: "Yes", onPress: deletePost }
-    ]);
+    Alert.alert(
+      "Delete Post",
+      `Do you want to delete post '${post.caption}'?`,
+      [
+        {
+          text: "No",
+          style: "destructive"
+        },
+        { text: "Yes", onPress: deletePost }
+      ]
+    );
   }
 
   async function deletePost() {
-    const response = await fetch(`${EXPO_PUBLIC_API_URL}/posts/${post.id}.json`, {
-      method: "DELETE"
-    });
+    const response = await fetch(
+      `${EXPO_PUBLIC_API_URL}/posts/${post.id}.json`,
+      {
+        method: "DELETE"
+      }
+    );
     if (response.ok) {
       Toast.show("Post successfully deleted");
       reload();

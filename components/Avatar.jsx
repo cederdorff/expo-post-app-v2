@@ -1,12 +1,11 @@
 import { primary } from "@/constants/ThemeVariables";
-import { useRouter } from "expo-router";
+import { router } from "expo-router";
 import { useEffect, useState } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function Avatar({ userId }) {
   const [user, setUser] = useState([]);
   const { EXPO_PUBLIC_API_URL } = process.env;
-  const router = useRouter();
 
   useEffect(() => {
     async function getUser() {

@@ -1,9 +1,8 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { Link, Tabs } from "expo-router";
+import { Tabs, router } from "expo-router";
 import React from "react";
-
 import { primary, secondary, tintColorLight } from "@/constants/ThemeVariables";
-import { Pressable, Text } from "react-native";
+import { Button } from "react-native";
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props) {
@@ -34,21 +33,11 @@ export default function TabLayout() {
           title: "Posts",
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
           headerRight: () => (
-            <Link href="/(modals)/post-modal" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <Text
-                    style={{
-                      marginRight: 15,
-                      opacity: pressed ? 0.5 : 1,
-                      color: tintColorLight,
-                      fontWeight: "bold"
-                    }}>
-                    New Post
-                  </Text>
-                )}
-              </Pressable>
-            </Link>
+            <Button
+              title="Add Post"
+              color={tintColorLight}
+              onPress={() => router.navigate("/post-modal")}
+            />
           )
         }}
       />

@@ -50,7 +50,6 @@ export default function RootLayout() {
 function RootLayoutNav() {
   useEffect(() => {
     onAuthStateChanged(auth, user => {
-      console.log("user: ", user);
       if (!user) {
         // No user is signed in.
         router.replace("/sign-in");

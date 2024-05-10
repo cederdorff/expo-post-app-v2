@@ -1,13 +1,15 @@
 import MapMarker from "@/components/MapMarker";
+import { primary } from "@/constants/ThemeVariables";
 import * as Location from "expo-location";
 import { useFocusEffect } from "expo-router";
 import { useCallback, useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
-import MapView from "react-native-maps";
+import MapView, { Marker } from "react-native-maps";
 
 export default function Map() {
   const [posts, setPosts] = useState([]);
   const { EXPO_PUBLIC_API_URL } = process.env;
+  const [location, setLocation] = useState(null);
 
   useEffect(() => {
     getPosts();
@@ -20,6 +22,14 @@ export default function Map() {
         console.log("Permission to access location was denied");
         return;
       }
+
+      const currentLocation = await Location.getCurrentPositionAsync();
+      setLocation({
+        latitude: currentLocation.coords.latitude,
+        longitude: currentLocation.coords.longitude,
+        latitudeDelta: 0.15,
+        longitudeDelta: 0.04
+      });
     }
     requestLocationPersmissions();
   }, []);
@@ -45,7 +55,9 @@ export default function Map() {
 
   return (
     <View style={styles.container}>
-      <MapView style={styles.map}>
+      <MapView style={styles.map} initialRegion={location} region={location}>
+        <Marker coordinate={location} title="You are here" pinColor={primary} />
+
         {posts.map(post => (
           <MapMarker post={post} key={post.id} />
         ))}

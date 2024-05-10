@@ -1,5 +1,5 @@
 import MapMarker from "@/components/MapMarker";
-import { primary } from "@/constants/ThemeVariables";
+import { secondary } from "@/constants/ThemeVariables";
 import * as Location from "expo-location";
 import { useFocusEffect } from "expo-router";
 import { useCallback, useEffect, useState } from "react";
@@ -56,7 +56,11 @@ export default function Map() {
   return (
     <View style={styles.container}>
       <MapView style={styles.map} initialRegion={location} region={location}>
-        <Marker coordinate={location} title="You are here" pinColor={primary} />
+        <Marker
+          coordinate={location}
+          title="You are here"
+          pinColor={secondary}
+        />
 
         {posts.map(post => (
           <MapMarker post={post} key={post.id} />

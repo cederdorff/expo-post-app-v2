@@ -1,5 +1,12 @@
 import StyledButton from "@/components/StyledButton";
-import { tintColorDark } from "@/constants/ThemeVariables";
+import {
+  borderRadius,
+  labelFontSize,
+  primary,
+  secondary,
+  tintColorDark,
+  tintColorLight
+} from "@/constants/ThemeVariables";
 import * as ImagePicker from "expo-image-picker";
 import * as Location from "expo-location";
 import { Stack, router, useLocalSearchParams } from "expo-router";
@@ -18,13 +25,6 @@ import {
   View
 } from "react-native";
 import Toast from "react-native-root-toast";
-import {
-  borderRadius,
-  labelFontSize,
-  primary,
-  secondary,
-  tintColorLight
-} from "@/constants/ThemeVariables";
 import { auth } from "../../firebase-config";
 
 export default function PostModal() {

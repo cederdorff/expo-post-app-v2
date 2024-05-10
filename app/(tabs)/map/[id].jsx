@@ -1,7 +1,7 @@
+import Post from "@/components/Post";
 import { Stack, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import { ScrollView } from "react-native";
-import Post from "@/components/Post";
 
 export default function MapDetail() {
   const [post, setPost] = useState({});

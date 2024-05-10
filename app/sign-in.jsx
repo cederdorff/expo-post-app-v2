@@ -1,7 +1,3 @@
-import { Stack, router } from "expo-router";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 import {
   borderRadius,
   labelFontSize,
@@ -9,6 +5,10 @@ import {
   secondary,
   tintColorLight
 } from "@/constants/ThemeVariables";
+import { Stack, router } from "expo-router";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 import StyledButton from "../components/StyledButton";
 
 export default function SignIn() {

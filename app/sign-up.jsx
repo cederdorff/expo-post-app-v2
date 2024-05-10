@@ -1,9 +1,3 @@
-import { Stack, router } from "expo-router";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
-import { useState } from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
-import Toast from "react-native-root-toast";
-import StyledButton from "../components/StyledButton";
 import {
   borderRadius,
   labelFontSize,
@@ -11,6 +5,12 @@ import {
   secondary,
   tintColorLight
 } from "@/constants/ThemeVariables";
+import { Stack, router } from "expo-router";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { useState } from "react";
+import { StyleSheet, Text, TextInput, View } from "react-native";
+import Toast from "react-native-root-toast";
+import StyledButton from "../components/StyledButton";
 
 export default function SignUp() {
   const [mail, setMail] = useState("");

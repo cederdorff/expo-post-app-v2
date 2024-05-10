@@ -1,9 +1,9 @@
+import MapMarker from "@/components/MapMarker";
 import * as Location from "expo-location";
 import { useFocusEffect } from "expo-router";
 import { useCallback, useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import MapView from "react-native-maps";
-import MapMarker from "@/components/MapMarker";
 
 export default function Map() {
   const [posts, setPosts] = useState([]);

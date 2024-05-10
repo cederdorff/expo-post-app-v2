@@ -1,4 +1,4 @@
-import { Stack, useRouter } from "expo-router";
+import { Stack, router } from "expo-router";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
@@ -8,14 +8,13 @@ import {
   primary,
   secondary,
   tintColorLight
-} from "../constants/ThemeVariables";
+} from "@/constants/ThemeVariables";
 import StyledButton from "../components/StyledButton";
 
 export default function SignIn() {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const router = useRouter();
   const auth = getAuth();
 
   function handleSignIn() {

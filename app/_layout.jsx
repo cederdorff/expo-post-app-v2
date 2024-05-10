@@ -1,7 +1,7 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { DefaultTheme, ThemeProvider } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { Stack, useRouter } from "expo-router";
+import { Stack, router } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { RootSiblingParent } from "react-native-root-siblings";
@@ -28,7 +28,6 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
     ...FontAwesome.font
   });
 
@@ -51,8 +50,6 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-  const router = useRouter();
-
   useEffect(() => {
     onAuthStateChanged(auth, user => {
       console.log("user: ", user);
@@ -65,29 +62,25 @@ function RootLayoutNav() {
 
   return (
     <RootSiblingParent>
+      <StatusBar style="light" />
       <ActionSheetProvider>
-        {/* <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}> */}
-        <ThemeProvider value={DefaultTheme}>
-          <StatusBar style="light" />
-
-          <Stack>
-            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-            <Stack.Screen
-              name="(modals)/post-modal"
-              options={{
-                presentation: "modal",
-                headerStyle: {
-                  backgroundColor: primary,
-                  headerTintColor: tintColorLight
-                },
-                headerTintColor: tintColorLight,
-                headerTitleStyle: {
-                  fontWeight: "bold"
-                }
-              }}
-            />
-          </Stack>
-        </ThemeProvider>
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen
+            name="(modals)/post-modal"
+            options={{
+              presentation: "modal",
+              headerStyle: {
+                backgroundColor: primary,
+                headerTintColor: tintColorLight
+              },
+              headerTintColor: tintColorLight,
+              headerTitleStyle: {
+                fontWeight: "bold"
+              }
+            }}
+          />
+        </Stack>
       </ActionSheetProvider>
     </RootSiblingParent>
   );

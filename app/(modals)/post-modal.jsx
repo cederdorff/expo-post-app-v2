@@ -2,7 +2,7 @@ import StyledButton from "@/components/StyledButton";
 import { tintColorDark } from "@/constants/ThemeVariables";
 import * as ImagePicker from "expo-image-picker";
 import * as Location from "expo-location";
-import { Stack, useLocalSearchParams, useRouter } from "expo-router";
+import { Stack, router, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import {
   Button,
@@ -24,7 +24,7 @@ import {
   primary,
   secondary,
   tintColorLight
-} from "../../constants/ThemeVariables";
+} from "@/constants/ThemeVariables";
 import { auth } from "../../firebase-config";
 
 export default function PostModal() {
@@ -32,7 +32,6 @@ export default function PostModal() {
   const [caption, setCaption] = useState("");
   const [image, setImage] = useState("");
   const [location, setLocation] = useState({});
-  const router = useRouter();
   const { EXPO_PUBLIC_API_URL, EXPO_PUBLIC_OPEN_CAGE_API_KEY } = process.env;
 
   useEffect(() => {

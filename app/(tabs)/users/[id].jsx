@@ -7,7 +7,7 @@ import {
   primary,
   secondary,
   tintColorDark
-} from "../../../constants/ThemeVariables";
+} from "@/constants/ThemeVariables";
 
 export default function UserDetails() {
   const { id } = useLocalSearchParams();

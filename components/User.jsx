@@ -1,10 +1,9 @@
 import { Ionicons } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
+import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { primary, secondary } from "../constants/ThemeVariables";
+import { primary, secondary } from "@/constants/ThemeVariables";
 
 export default function User({ user }) {
-  const router = useRouter();
   return (
     <TouchableOpacity onPress={() => router.push(`users/${user.id}`)}>
       <View style={styles.userContainer}>

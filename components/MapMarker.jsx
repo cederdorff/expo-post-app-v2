@@ -1,10 +1,8 @@
-import { useRouter } from "expo-router";
+import { router } from "expo-router";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { Callout, Marker } from "react-native-maps";
 
 export default function MapMarker({ post }) {
-  const router = useRouter();
-
   function handleCalloutPress(id) {
     router.push(`map/${id}`);
   }

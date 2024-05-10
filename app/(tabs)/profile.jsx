@@ -1,5 +1,6 @@
+import StyledButton from "@/components/StyledButton";
 import * as ImagePicker from "expo-image-picker";
-import { Stack, useRouter } from "expo-router";
+import { Stack, router } from "expo-router";
 import { signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import {
@@ -22,14 +23,12 @@ import {
   tintColorLight
 } from "../../constants/ThemeVariables";
 import { auth } from "../../firebase-config";
-import StyledButton from "@/components/StyledButton";
 
 export default function Profile() {
   const [name, setName] = useState("");
   const [title, setTitle] = useState("");
   const [mail, setMail] = useState("");
   const [image, setImage] = useState("");
-  const router = useRouter();
   const { EXPO_PUBLIC_API_URL } = process.env;
 
   const url = `${EXPO_PUBLIC_API_URL}/users/${auth.currentUser?.uid}.json`;

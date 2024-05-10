@@ -16,7 +16,7 @@
       "caption": "Exploring the city streets of Aarhus",
       "createdAt": 1687615634430,
       "image": "https://images.unsplash.com/photo-1559070169-a3077159ee16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-      "uid": "fTs84KRoYw5pRZEWCq2Z",
+      "uid": "wrliEUxQxHdkH5uQ3a05OKksnt03",
       "location": {
         "city": "Aarhus",
         "country": "Denmark",
@@ -30,6 +30,8 @@
       "image": "https://images.unsplash.com/photo-1548940740-204726a19be3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
       "uid": "fjpRTRTjZHwrq3tTLHri",
       "location": {
+        "city": "Aarhus",
+        "country": "Denmark",
         "latitude": 56.157489440852906,
         "longitude": 10.20089048914843
       }
@@ -37,7 +39,7 @@
     "-M3Ghi789vwx": {
       "caption": "Exploring the city center of Aarhus",
       "createdAt": 1687615704430,
-      "image": "https://images.unsplash.com/photo-1612624629424-ddde915d3dc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto.format&fit=crop&w=500&q=80",
+      "image": "https://images.unsplash.com/photo-1612624629424-ddde915d3dc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
       "uid": "pqzGY1MnHYm3I4Ca79Xn",
       "location": {
         "city": "Aarhus",
@@ -50,7 +52,7 @@
       "caption": "A cozy morning with coffee",
       "createdAt": 1677605634430,
       "image": "https://images.unsplash.com/photo-1545319261-f3760f9dd64d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-      "uid": "HlvRHr58C05guOLl64k5",
+      "uid": "4Q0YnA3Ox1XJXqOHWnmHfOTnkcJ3",
       "location": {
         "city": "Aarhus",
         "country": "Denmark",
@@ -74,7 +76,7 @@
       "caption": "A beautiful morning in Aarhus",
       "createdAt": 1687611054440,
       "image": "https://images.unsplash.com/photo-1573997953524-efed43db70a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-      "uid": "HlvRHr58C05guOLl64k5",
+      "uid": "4Q0YnA3Ox1XJXqOHWnmHfOTnkcJ3",
       "location": {
         "city": "Aarhus",
         "country": "Denmark",
@@ -93,6 +95,78 @@
         "latitude": 56.1539352,
         "longitude": 10.1995787
       }
+    },
+    "-LuVwx709yza": {
+      "caption": "Beautiful architecture in Louvain-la-Neuve 🏛",
+      "createdAt": 1715108073533,
+      "image": "https://images.unsplash.com/photo-1523008570152-4989932dd67c?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "uid": "JovNcr99C05elOLl00k2",
+      "location": {
+        "city": "Louvain-la-Neuve",
+        "country": "Belgium",
+        "latitude": 50.6680936,
+        "longitude": 4.6015327
+      }
+    },
+    "-Bruwx799ges": {
+      "caption": "The Canals of Bruges 🇧🇪",
+      "createdAt": 1715128073533,
+      "image": "https://images.unsplash.com/photo-1516396374642-2913ae68b261?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "uid": "XavNcr99C05erOLd0011",
+      "location": {
+        "city": "Bruges",
+        "country": "Belgium",
+        "latitude": 51.213041,
+        "longitude": 3.2176382
+      }
+    },
+    "-Coffx222cup": {
+      "caption": "Morning coffee in the city center of Louvain-la-Neuve ☕️",
+      "createdAt": 1715108073533,
+      "image": "https://images.unsplash.com/photo-1638283901702-fc71176fd1e9?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "uid": "4Q0YnA3Ox1XJXqOHWnmHfOTnkcJ3",
+      "location": {
+        "city": "Louvain-la-Neuve",
+        "country": "Belgium",
+        "latitude": 50.6668897,
+        "longitude": 4.6171037
+      }
+    },
+    "-Canex459ian": {
+      "caption": "Beautiful views of the canal in Dinant 🌊",
+      "createdAt": 1715108273533,
+      "image": "https://images.unsplash.com/photo-1491557345352-5929e343eb89?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "uid": "nlvRcr44C05kuOLl66k5",
+      "location": {
+        "city": "Dinant",
+        "country": "Belgium",
+        "latitude": 50.256598,
+        "longitude": 4.898503
+      }
+    },
+    "-Latte419ice": {
+      "caption": "I don't drink coffee, I take ice latte my dear 🍦",
+      "createdAt": 1715508093533,
+      "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "uid": "wrliEUxQxHdkH5uQ3a05OKksnt03",
+      "location": {
+        "city": "Louvain-la-Neuve",
+        "country": "Belgium",
+        "latitude": 50.6662535,
+        "longitude": 4.6052109
+      }
+    },
+    "-Marti059hus": {
+      "caption": "Martin's Louvain-la-Neuve - Better than Wake Up Aarhus ✨",
+      "createdAt": 1715308673533,
+      "image": "https://images.unsplash.com/photo-1522309548992-79f752a936d9?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "uid": "nlvRcr44C05kuOLl66k5",
+      "location": {
+        "city": "Louvain-la-Neuve",
+        "country": "Belgium",
+        "latitude": 50.6656525,
+        "longitude": 4.6062086
+      }
     }
   },
   "users": {
@@ -102,7 +176,7 @@
       "name": "Maria Louise Bendixen",
       "title": "Senior Lecturer"
     },
-    "fTs84KRoYw5pRZEWCq2Z": {
+    "wrliEUxQxHdkH5uQ3a05OKksnt03": {
       "image": "https://share.cederdorff.dk/images/race.webp",
       "mail": "race@eaaa.dk",
       "name": "Rasmus Cederdorff",
@@ -120,11 +194,29 @@
       "name": "Line Skjødt",
       "title": "Senior Lecturer & Internship Coordinator"
     },
-    "HlvRHr58C05guOLl64k5": {
+    "4Q0YnA3Ox1XJXqOHWnmHfOTnkcJ3": {
       "image": "https://www.eaaa.dk/media/bdojel41/dan-okkels-brendstrup.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921559630000&format=webp",
       "mail": "dob@eaaa.dk",
       "name": "Dan Okkels Brendstrup",
       "title": "Lecturer"
+    },
+    "nlvRcr44C05kuOLl66k5": {
+      "image": "https://media.licdn.com/dms/image/C5603AQFhKmICBwsvGQ/profile-displayphoto-shrink_800_800/0/1516340106169?e=1720656000&v=beta&t=Bp4vrQ6oPVl_VnQzRFPgXFunIimI3CVsl9B0ArJVpZw",
+      "mail": "nick.romanidis@senecapolytechnic.ca",
+      "name": "Nick Romanidis",
+      "title": "Software Engineer & Professor"
+    },
+    "JovNcr99C05elOLl00k2": {
+      "image": "https://media.licdn.com/dms/image/C5603AQHk6ELDpde2Mw/profile-displayphoto-shrink_800_800/0/1517343360777?e=1720656000&v=beta&t=ItpuWkMKQmVHQEJFJADL0denCtGM71QoFAPEjEK7uPA",
+      "mail": "j.noel@ephec.be",
+      "name": "Jonathan Noël",
+      "title": "Professor in Computer Science"
+    },
+    "XavNcr99C05erOLd0011": {
+      "image": "https://media.licdn.com/dms/image/C5603AQGj27BmPuRx-w/profile-displayphoto-shrink_800_800/0/1516923169166?e=1720656000&v=beta&t=GfyLWvAUOCDfoRkgMmabXbRXYHjrRDq_sXnctdoj0WI",
+      "mail": "x.dubruille@ephec.be",
+      "name": "Xavier Dubruille",
+      "title": "Professor in Computer Science"
     }
   }
 }

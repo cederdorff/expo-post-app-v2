@@ -69,11 +69,12 @@ export default function PostModal() {
       `https://api.opencagedata.com/geocode/v1/json?q=${currentLocation.coords.latitude}+${currentLocation.coords.longitude}&key=${EXPO_PUBLIC_OPEN_CAGE_API_KEY}`
     );
     const data = await response.json();
-
     return {
       latitude: currentLocation.coords.latitude,
       longitude: currentLocation.coords.longitude,
-      city: data.results[0].components.city,
+      city:
+        data.results[0].components.city ||
+        data.results[0].components.postal_city,
       country: data.results[0].components.country
     };
   }

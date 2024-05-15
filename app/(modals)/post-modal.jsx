@@ -74,7 +74,8 @@ export default function PostModal() {
       longitude: currentLocation.coords.longitude,
       city:
         data.results[0].components.city ||
-        data.results[0].components.postal_city,
+        data.results[0].components.postal_city ||
+        data.results[0].components.town,
       country: data.results[0].components.country
     };
   }

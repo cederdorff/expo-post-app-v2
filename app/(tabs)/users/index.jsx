@@ -1,10 +1,17 @@
 import User from "@/components/User";
-import { primary } from "@/constants/ThemeVariables";
+import { primary, secondary } from "@/constants/ThemeVariables";
 import { useEffect, useState } from "react";
-import { FlatList, RefreshControl, StyleSheet, View } from "react-native";
+import {
+  RefreshControl,
+  SectionList,
+  StyleSheet,
+  Text,
+  View
+} from "react-native";
 
 export default function Users() {
   const [users, setUsers] = useState([]);
+  const [sections, setSections] = useState([]);
   const [refreshing, setRefreshing] = useState(false);
   const { EXPO_PUBLIC_API_URL } = process.env;
 
@@ -23,6 +30,24 @@ export default function Users() {
     setUsers(usersArray);
   }
 
+  useEffect(() => {
+    // group users by title
+    const groupUsersByTitle = users.reduce((titles, user) => {
+      // reduce to object
+      const title = user.title || "Others"; // default title
+      if (!titles[title]) {
+        // if title not exist, create new
+        titles[title] = { title: title, data: [] }; // title: title, data: []
+      }
+      titles[title].data.push(user); // push user to data
+      return titles; // return object
+    }, {}); // initial value is empty object
+
+    const sectionData = Object.values(groupUsersByTitle); // from object to array
+    sectionData.sort((a, b) => a.title.localeCompare(b.title)); // sort by title
+    setSections(sectionData); // set sections - state
+  }, [users]);
+
   async function handleRefresh() {
     setRefreshing(true);
     await getUsers();
@@ -36,26 +61,35 @@ export default function Users() {
     return <User user={user} />;
   }
 
+  function renderHeader({ section }) {
+    return <Text style={styles.header}>{section.title}</Text>;
+  }
+
   return (
-    <View style={styles.list}>
-      <FlatList
-        data={users}
-        renderItem={renderUser}
-        keyExtractor={user => user.id}
-        refreshControl={
-          <RefreshControl
-            refreshing={refreshing}
-            onRefresh={handleRefresh}
-            tintColor={primary}
-          />
-        }
-      />
-    </View>
+    <SectionList
+      sections={sections}
+      renderItem={renderUser}
+      renderSectionHeader={renderHeader}
+      keyExtractor={item => item.id}
+      refreshControl={
+        <RefreshControl
+          refreshing={refreshing}
+          onRefresh={handleRefresh}
+          tintColor={primary}
+        />
+      }
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  list: {
-    flex: 1
+  header: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: primary,
+    backgroundColor: secondary,
+    paddingHorizontal: 10,
+    paddingTop: 25,
+    paddingBottom: 10
   }
 });

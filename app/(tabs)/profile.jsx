@@ -99,7 +99,7 @@ export default function Profile() {
         }}
       />
       <View>
-        <TouchableOpacity onPress={chooseImage}>
+        <TouchableOpacity onPress={chooseImage} style={styles.imageContainer}>
           <Image
             style={styles.image}
             source={{
@@ -163,11 +163,16 @@ const styles = StyleSheet.create({
     borderColor: primary,
     borderWidth: 2
   },
+  imageContainer: {
+    borderWidth: 3,
+    borderColor: primary,
+    borderRadius: 200,
+    padding: 2,
+    backgroundColor: tintColorLight
+  },
   image: {
     aspectRatio: 1,
-    borderRadius: borderRadius,
-    borderWidth: 2,
-    borderColor: primary
+    borderRadius: 200
   },
   buttonContainer: {
     marginBottom: 50,

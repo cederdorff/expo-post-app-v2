@@ -43,20 +43,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12
   },
   avatarImageContainer: {
-    alignItems: "center",
-    borderRadius: 55 / 2,
     borderWidth: 3,
     borderColor: primary,
-    display: "flex",
+    borderRadius: 100,
+    padding: 2,
     height: 55,
-    justifyContent: "center",
     marginRight: 12,
     width: 55
   },
   avatarImage: {
-    borderRadius: 42 / 2,
-    height: 45,
-    width: 45
+    aspectRatio: 1,
+    borderRadius: 100
   },
   avatarName: {
     fontSize: 17,

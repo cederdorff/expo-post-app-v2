@@ -99,7 +99,7 @@ export default function Post({ post, reload }) {
     <View style={styles.postContainer}>
       <View style={styles.headerContainer}>
         <Avatar userId={post.uid} />
-        {auth.currentUser.uid === post.uid ? (
+        {auth.currentUser?.uid === post.uid ? (
           <TouchableOpacity style={styles.dots} onPress={showEditMenu}>
             <Ionicons name="ellipsis-horizontal" size={28} color={primary} />
           </TouchableOpacity>

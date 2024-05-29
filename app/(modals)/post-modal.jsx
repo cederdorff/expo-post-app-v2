@@ -188,7 +188,12 @@ export default function PostModal() {
           <Text style={styles.label}>City</Text>
           <TextInput
             style={styles.input}
-            value={`${location.city}, ${location.country}`}
+            placeholder="Type your city"
+            value={
+              location.city
+                ? `${location.city}, ${location.country}`
+                : "Loading your current location..."
+            }
             editable={false}
           />
           <StyledButton

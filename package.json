@@ -13,7 +13,11 @@
   "jest": {
     "preset": "jest-expo"
   },
-  "prettier": {},
+  "prettier": {
+    "trailingComma": "none",
+    "bracketSameLine": true,
+    "arrowParens": "avoid"
+  },
   "dependencies": {
     "@expo/metro-runtime": "~3.2.1",
     "@expo/react-native-action-sheet": "^4.0.1",

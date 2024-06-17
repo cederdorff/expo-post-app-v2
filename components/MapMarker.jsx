@@ -7,8 +7,16 @@ export default function MapMarker({ post }) {
     router.push(`map/${id}`);
   }
 
+  const latitude = post?.location?.latitude;
+  const longitude = post?.location?.longitude;
+
+  if (!latitude || !longitude) {
+    console.log("Marker has no location", post);
+    return null;
+  }
+
   return (
-    <Marker coordinate={post.location}>
+    <Marker coordinate={{ latitude, longitude }}>
       <Callout onPress={() => handleCalloutPress(post.id)}>
         <View style={styles.calloutView}>
           <Text style={styles.caption}>{post.caption}</Text>

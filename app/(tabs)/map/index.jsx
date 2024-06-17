@@ -55,9 +55,12 @@ export default function Map() {
 
   return (
     <View style={styles.container}>
-      <MapView style={styles.map} initialRegion={location} region={location}>
-        <Marker coordinate={location} title="You are here" pinColor={primary} />
-
+      <MapView
+        style={styles.map}
+        initialRegion={location}
+        region={location}
+        showsUserLocation={true}
+        showsMyLocationButton={true}>
         {posts.map(post => (
           <MapMarker post={post} key={post.id} />
         ))}

@@ -23,6 +23,8 @@ import {
   tintColorLight
 } from "../../constants/ThemeVariables";
 import { auth } from "../../firebase-config";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import uuid from "react-native-uuid";
 
 export default function Profile() {
   const [name, setName] = useState("");
@@ -58,14 +60,29 @@ export default function Profile() {
   async function chooseImage() {
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
-      base64: true,
       allowsEditing: true,
       quality: 0.3
     });
 
     if (!result.canceled) {
-      const base64 = "data:image/jpeg;base64," + result.assets[0].base64;
-      setImage(base64);
+      // Convert image to blob
+      const response = await fetch(result.assets[0].uri);
+      const blob = await response.blob();
+
+      // Create a reference to the file in Cloud Storage
+      const storage = getStorage();
+      const storageRef = ref(
+        storage,
+        `avatars/${name?.toLowerCase()?.replaceAll(" ", "-")}-${uuid.v4()}`
+      );
+
+      // Upload the file to Cloud Storage
+      const snapshot = await uploadBytes(storageRef, blob);
+
+      // Get the download URL
+      const downloadURL = await getDownloadURL(snapshot.ref);
+      // Save the download URL to React state
+      setImage(downloadURL);
     }
   }
 

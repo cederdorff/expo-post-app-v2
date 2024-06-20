@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "expo-post-app-v2",
+    "name": "RNSS24",
     "slug": "rnss24-post-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,7 +17,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "dk.race.expo-post-app-v2"
+      "bundleIdentifier": "com.rnss24.rnss24postapp"
     },
     "android": {
       "adaptiveIcon": {
@@ -27,7 +27,8 @@
       "permissions": [
         "android.permission.ACCESS_COARSE_LOCATION",
         "android.permission.ACCESS_FINE_LOCATION"
-      ]
+      ],
+      "package": "com.rnss24.rnss24postapp"
     },
     "web": {
       "bundler": "metro",

@@ -2,9 +2,11 @@ import { initializeApp } from "firebase/app";
 import { initializeAuth, getReactNativePersistence } from "firebase/auth";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+const { EXPO_PUBLIC_FIREBASE_API_KEY } = process.env;
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBKWdwc3CdNuRaYgDpygI2Jj-0FQbzV9WI",
+  apiKey: EXPO_PUBLIC_FIREBASE_API_KEY,
   authDomain: "expo-post-app.firebaseapp.com",
   databaseURL: "https://expo-post-app-default-rtdb.firebaseio.com",
   projectId: "expo-post-app",

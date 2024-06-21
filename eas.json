@@ -1,10 +1,7 @@
 {
   "build": {
     "preview": {
-      "distribution": "internal",
-      "env": {
-        "EXPO_PUBLIC_API_URL": "https://expo-post-app-default-rtdb.firebaseio.com"
-      }
+      "distribution": "internal"
     }
   }
 }

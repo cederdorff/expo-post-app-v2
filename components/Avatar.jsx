@@ -5,7 +5,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function Avatar({ userId }) {
   const [user, setUser] = useState([]);
-  const { EXPO_PUBLIC_API_URL } = process.env;
+  const EXPO_PUBLIC_API_URL = process.env.EXPO_PUBLIC_API_URL;
 
   useEffect(() => {
     async function getUser() {

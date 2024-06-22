@@ -36,7 +36,9 @@ export default function PostModal() {
   const [caption, setCaption] = useState("");
   const [image, setImage] = useState("");
   const [location, setLocation] = useState({});
-  const { EXPO_PUBLIC_API_URL, EXPO_PUBLIC_OPEN_CAGE_API_KEY } = process.env;
+  const EXPO_PUBLIC_API_URL = process.env.EXPO_PUBLIC_API_URL;
+  const EXPO_PUBLIC_OPEN_CAGE_API_KEY =
+    process.env.EXPO_PUBLIC_OPEN_CAGE_API_KEY;
 
   useEffect(() => {
     async function getPost() {

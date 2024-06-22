@@ -18,6 +18,11 @@
       "bundleIdentifier": "com.rnss24.rnss24postapp"
     },
     "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#264c59"
+      },
+      "icon": "./assets/images/icon.png",
       "permissions": [
         "android.permission.ACCESS_COARSE_LOCATION",
         "android.permission.ACCESS_FINE_LOCATION"

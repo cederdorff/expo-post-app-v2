@@ -20,7 +20,8 @@ import {
   labelFontSize,
   primary,
   secondary,
-  tintColorLight
+  tintColorLight,
+  placeholderTextColor
 } from "../../constants/ThemeVariables";
 import { auth } from "../../firebase-config";
 
@@ -115,6 +116,7 @@ export default function Profile() {
           onChangeText={setName}
           value={name}
           placeholder="Type your name"
+          placeholderTextColor={placeholderTextColor}
           autoCapitalize="none"
         />
 
@@ -124,6 +126,7 @@ export default function Profile() {
           onChangeText={setTitle}
           value={title}
           placeholder="Type your title"
+          placeholderTextColor={placeholderTextColor}
           autoCapitalize="none"
         />
         <Text style={styles.label}>Mail</Text>
@@ -132,8 +135,10 @@ export default function Profile() {
           onChangeText={setMail}
           value={mail}
           placeholder="Type your mail"
+          placeholderTextColor={placeholderTextColor}
           autoCapitalize="none"
           editable={false}
+          backgroundColor="#dddddd"
         />
         <View style={styles.buttonContainer}>
           <StyledButton text="Save" style="primary" onPress={handleSaveUser} />

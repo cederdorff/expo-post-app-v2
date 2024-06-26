@@ -87,7 +87,9 @@ export default function Profile() {
   }
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView
+      style={styles.container}
+      automaticallyAdjustKeyboardInsets={true}>
       <Stack.Screen
         options={{
           headerRight: () => (

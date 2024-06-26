@@ -11,6 +11,7 @@ import { useState } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import Toast from "react-native-root-toast";
 import StyledButton from "../components/StyledButton";
+import { placeholderTextColor } from "../constants/ThemeVariables";
 
 export default function SignUp() {
   const [mail, setMail] = useState("");
@@ -50,6 +51,7 @@ export default function SignUp() {
         onChangeText={setMail}
         value={mail}
         placeholder="Type your mail"
+        placeholderTextColor={placeholderTextColor}
         autoCapitalize="none"
       />
       <Text style={styles.label}>Password</Text>
@@ -59,6 +61,7 @@ export default function SignUp() {
         value={password}
         secureTextEntry={true}
         placeholder="Type your password"
+        placeholderTextColor={placeholderTextColor}
       />
       <Text style={styles.errorMessage}>{message}</Text>
       <StyledButton

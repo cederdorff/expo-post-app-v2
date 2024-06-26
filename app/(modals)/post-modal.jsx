@@ -2,11 +2,11 @@ import StyledButton from "@/components/StyledButton";
 import {
   borderRadius,
   labelFontSize,
+  placeholderTextColor,
   primary,
   secondary,
   tintColorDark,
-  tintColorLight,
-  placeholderTextColor
+  tintColorLight
 } from "@/constants/ThemeVariables";
 import * as ImagePicker from "expo-image-picker";
 import * as Location from "expo-location";
@@ -15,15 +15,12 @@ import { useEffect, useState } from "react";
 import {
   Button,
   Image,
-  Keyboard,
-  KeyboardAvoidingView,
   Platform,
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
-  TouchableWithoutFeedback,
-  View
+  ScrollView
 } from "react-native";
 import Toast from "react-native-root-toast";
 import { auth } from "../../firebase-config";
@@ -143,71 +140,67 @@ export default function PostModal() {
   }
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-      style={styles.container}>
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <View style={styles.inner}>
-          <Stack.Screen
-            options={{
-              title: id ? "Update Post" : "Create Post",
-              headerLeft: () => (
-                <Button
-                  title="Cancel"
-                  color={Platform.OS === "ios" ? tintColorLight : tintColorDark}
-                  onPress={() => router.back()}
-                />
-              ),
-              headerRight: () => (
-                <Button
-                  title={id ? "Update" : "Create"}
-                  color={Platform.OS === "ios" ? tintColorLight : tintColorDark}
-                  onPress={handleSave}
-                />
-              )
-            }}
-          />
-
-          <Text style={styles.label}>Image</Text>
-          <TouchableOpacity onPress={chooseImage}>
-            <Image
-              style={styles.image}
-              source={{
-                uri:
-                  image ||
-                  "https://cederdorff.com/race/images/placeholder-image.webp"
-              }}
+    <ScrollView
+      style={styles.container}
+      automaticallyAdjustKeyboardInsets={true}>
+      <Stack.Screen
+        options={{
+          title: id ? "Update Post" : "Create Post",
+          headerLeft: () => (
+            <Button
+              title="Cancel"
+              color={Platform.OS === "ios" ? tintColorLight : tintColorDark}
+              onPress={() => router.back()}
             />
-          </TouchableOpacity>
-          <Text style={styles.label}>Caption</Text>
-          <TextInput
-            style={styles.input}
-            onChangeText={setCaption}
-            value={caption}
-            placeholder="Type your caption"
-            placeholderTextColor={placeholderTextColor}
-          />
-          <Text style={styles.label}>City</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Type your city"
-            placeholderTextColor={placeholderTextColor}
-            value={
-              location.city
-                ? `${location.city}, ${location.country}`
-                : "Loading your current location..."
-            }
-            editable={false}
-            backgroundColor="#dddddd"
-          />
-          <StyledButton
-            text={id ? "Update Post" : "Create Post"}
-            onPress={handleSave}
-            style="primary"
-          />
-        </View>
-      </TouchableWithoutFeedback>
-    </KeyboardAvoidingView>
+          ),
+          headerRight: () => (
+            <Button
+              title={id ? "Update" : "Create"}
+              color={Platform.OS === "ios" ? tintColorLight : tintColorDark}
+              onPress={handleSave}
+            />
+          )
+        }}
+      />
+
+      <Text style={styles.label}>Image</Text>
+      <TouchableOpacity onPress={chooseImage}>
+        <Image
+          style={styles.image}
+          source={{
+            uri:
+              image ||
+              "https://cederdorff.com/race/images/placeholder-image.webp"
+          }}
+        />
+      </TouchableOpacity>
+      <Text style={styles.label}>Caption</Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={setCaption}
+        value={caption}
+        placeholder="Type your caption"
+        placeholderTextColor={placeholderTextColor}
+      />
+      <Text style={styles.label}>City</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Type your city"
+        placeholderTextColor={placeholderTextColor}
+        value={
+          location.city
+            ? `${location.city}, ${location.country}`
+            : "Loading your current location..."
+        }
+        editable={false}
+        backgroundColor="#dddddd"
+      />
+      <StyledButton
+        text={id ? "Update Post" : "Create Post"}
+        onPress={handleSave}
+        style="primary"
+      />
+    </ScrollView>
   );
 }
 

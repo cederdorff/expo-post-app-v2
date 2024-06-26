@@ -10,6 +10,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import StyledButton from "../components/StyledButton";
+import { placeholderTextColor } from "../constants/ThemeVariables";
 
 export default function SignIn() {
   const [mail, setMail] = useState("");
@@ -53,6 +54,7 @@ export default function SignIn() {
         onChangeText={setMail}
         value={mail}
         placeholder="Type your mail"
+        placeholderTextColor={placeholderTextColor}
         autoCapitalize="none"
       />
       <Text style={styles.label}>Password</Text>
@@ -62,6 +64,7 @@ export default function SignIn() {
         value={password}
         secureTextEntry={true}
         placeholder="Type your password"
+        placeholderTextColor={placeholderTextColor}
       />
       <Text style={styles.errorMessage}>{message}</Text>
       <StyledButton text="Sign In" onPress={handleSignIn} style="primary" />

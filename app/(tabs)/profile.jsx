@@ -108,7 +108,7 @@ export default function Profile() {
             source={{
               uri:
                 image ||
-                "https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg"
+                "https://cederdorff.com/race/images/placeholder-image.webp"
             }}
           />
         </TouchableOpacity>
